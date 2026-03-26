@@ -1,0 +1,144 @@
+.about {
+  width: 100%;
+  max-width: 1024px;
+  margin: 3rem auto;
+  padding: 0 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.75rem;
+  box-sizing: border-box;
+}
+
+.about__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.75rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.about__picture {
+  width: 300px;
+  height: 300px;
+  /* border-radius: 50%; */
+  object-fit: fill;
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); */
+  flex-shrink: 0;
+}
+
+.about__intro {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.about__name {
+  color: var(--clr-primary);
+}
+
+.about__role {
+  margin-top: 0.8rem;
+  font-weight: 500;
+}
+
+.about__desc {
+  font-size: 1rem;
+  max-width: 680px;
+  line-height: 1.6;
+  margin-top: 1.2rem;
+}
+
+.about__contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.about .link--icon {
+  margin-right: 0;
+}
+
+.about .btn--outline {
+  margin-right: 0;
+}
+
+@media (max-width: 900px) {
+  .about {
+    max-width: 720px;
+    padding: 0 1rem 1.5rem;
+  }
+
+  .about__header {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .about__picture {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about__intro {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .about__contact {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    margin-top: 1.5rem;
+    padding: 0 0.75rem 1rem;
+    gap: 1rem;
+  }
+
+  .about__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .about__picture {
+     width: 180px;
+  height: 180px;
+  border-radius: 70%;   /* round profile */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .about__intro {
+    width: 100%;
+  }
+
+  .about__desc {
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .about__contact {
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .about__contact .btn--outline,
+  .about__contact .link--icon {
+    margin-right: 0;
+    margin-bottom: 0.4rem;
+  }
+}
+

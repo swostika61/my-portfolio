@@ -1,0 +1,131 @@
+.education__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center the vertical line */
+  margin: 3rem 0;
+  padding: 2rem 0;
+}
+
+/* Vertical line in the middle */
+.education__timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--clr-primary), var(--clr-fg-alt));
+  border-radius: 2px;
+}
+
+/* Each education item wrapper */
+.education__item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start; /* default to left side */
+  margin-bottom: 3rem;
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+/* Animate cards in */
+.education__item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left / right alternation */
+.education__item.left {
+  justify-content: flex-start;
+  text-align: right;
+}
+
+.education__item.right {
+  justify-content: flex-end;
+  text-align: left;
+}
+
+/* Dot on the line */
+.education__dot {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 18px;
+  height: 18px;
+  background-color: var(--clr-primary);
+  border-radius: 50%;
+  border: 3px solid var(--clr-bg);
+  box-shadow: 0 0 10px var(--clr-primary);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Card content */
+.education__content {
+  max-width: 45%;
+  background-color: var(--clr-bg-alt);
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.education__content:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Text styling */
+.education__degree {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--clr-fg);
+}
+
+.education__school {
+  display: block;
+  font-size: 1rem;
+  color: var(--clr-fg-alt);
+  margin-top: 0.2rem;
+}
+
+.education__year {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--clr-primary);
+  margin-top: 0.1rem;
+}
+
+.education__desc {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--clr-fg-alt);
+  line-height: 1.5;
+}
+
+/* Responsive mobile layout */
+@media (max-width: 900px) {
+  .education__item,
+  .education__item.left,
+  .education__item.right {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  .education__content {
+    max-width: 90%;
+    margin-left: 40px; /* space from vertical line */
+  }
+
+  .education__timeline::before {
+    left: 20px;
+  }
+
+  .education__dot {
+    left: 20px;
+  }
+}
