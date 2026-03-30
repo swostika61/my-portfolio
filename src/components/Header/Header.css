@@ -1,5 +1,5 @@
 .header {
-  height: 8em;
+  height: 5em;
   max-width: 1100px;
   width: 95%;
   margin: 0 auto;
@@ -13,9 +13,10 @@
 
 .header__brand {
   color: var(--clr-on-dark);
-  font-size: 1.45rem;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .header .link,
@@ -40,7 +41,7 @@
 
 @media (max-width: 600px) {
   .header {
-    height: 6em;
+    height: 4em;
     padding: 0 1em;
   }
 }

@@ -6,18 +6,14 @@ import './Header.css'
  * Header component - Main header with site title and navigation
  */
 const Header = () => {
-  const { homepage, title } = header
+  const { title } = header
 
   return (
-    <header className='header center'>
+    <header id='header' className='header center'>
       <h3 className='header__brand'>
-        {homepage ? (
-          <a href={homepage} className='link'>
-            {title}
-          </a>
-        ) : (
-          title
-        )}
+        <a href='#header' className='link'>
+          {title}
+        </a>
       </h3>
       <Navbar />
     </header>

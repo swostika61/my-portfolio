@@ -43,6 +43,7 @@ const ProjectContainer = ({ project }) => {
           rel='noopener noreferrer'
         >
           <LaunchIcon />
+          <span>Live Preview</span>
         </a>
       )}
     </div>
