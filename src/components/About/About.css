@@ -82,7 +82,6 @@
   align-items: center;
   justify-content: center;
   color: var(--clr-fg-alt);
-  background-color: rgba(37, 99, 235, 0.1);
   border: var(--border-card);
   transition: transform var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
 }
@@ -104,7 +103,6 @@
 .about .link--icon:hover,
 .about .link--icon:focus {
   color: var(--clr-accent);
-  background-color: rgba(56, 189, 248, 0.18);
   transform: translateY(-1px);
 }
 
@@ -119,14 +117,12 @@
 }
 
 .dark .about .link--icon {
-  background-color: rgba(56, 189, 248, 0.12);
   border-color: rgba(125, 211, 252, 0.32);
 }
 
 .dark .about .link--icon:hover,
 .dark .about .link--icon:focus {
   color: var(--clr-accent);
-  background-color: rgba(56, 189, 248, 0.2);
 }
 
 .dark .about .btn--outline {
