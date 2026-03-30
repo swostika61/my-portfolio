@@ -3,7 +3,7 @@
   margin: 2.2rem auto 0;
   padding: 0 0.5rem;
   display: grid;
-  gap: 1rem;
+  gap: 1.3rem;
 }
 
 .education__item {
@@ -19,40 +19,47 @@
 
 .education__content {
   width: 100%;
-  background-color: var(--clr-bg-alt);
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  border-left: 4px solid var(--clr-primary);
-  padding: 1.15rem 1.2rem;
-  border-radius: 10px;
+  background: linear-gradient(135deg, var(--clr-bg-alt) 0%, rgba(37, 99, 235, 0.06) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.22);
+  border-left: 3px solid var(--clr-primary);
+  padding: 1.5rem 1.5rem;
+  border-radius: 12px;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .education__content:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: var(--clr-accent);
-  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.15);
+  border-left-color: var(--clr-accent);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.16);
+  background: linear-gradient(135deg, var(--clr-bg-alt) 0%, rgba(37, 99, 235, 0.1) 100%);
 }
 
 .education__degree {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: 700;
   color: var(--clr-fg);
   margin-bottom: 0.7rem;
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .education__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.7rem;
   margin-bottom: 0.75rem;
   align-items: center;
 }
 
 .education__school {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: var(--clr-fg);
   font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .education__location {
@@ -69,28 +76,29 @@
   font-size: 0.82rem;
   color: var(--clr-primary);
   font-weight: 600;
-  padding: 0.18rem 0.5rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 999px;
-  background-color: rgba(37, 99, 235, 0.12);
-  border: 1px solid rgba(37, 99, 235, 0.24);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(56, 189, 248, 0.08) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.3);
   margin-left: auto;
+  transition: all 0.2s ease;
 }
 
 .education__desc {
   margin-top: 0;
   font-size: 0.95rem;
   color: var(--clr-fg-alt);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .dark .education__content {
-  background-color: rgba(15, 23, 42, 0.88);
-  border-color: rgba(56, 189, 248, 0.28);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(37, 99, 235, 0.08) 100%);
+  border-color: rgba(56, 189, 248, 0.3);
 }
 
 @media (max-width: 900px) {
   .education__content {
-    padding: 1rem 1rem;
+    padding: 1.2rem 1.2rem;
   }
 
   .education__year {

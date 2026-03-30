@@ -5,25 +5,26 @@
 .experience__container {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 1.3rem;
   max-width: 800px;
   margin: 0 auto;
   padding: 0 0.5rem;
 }
 
 .experience__item {
-  padding: 1.2rem 1.3rem;
+  padding: 1.5rem 1.5rem;
   border-radius: 12px;
-  background-color: var(--clr-bg-alt);
-  border: 1px solid rgba(37, 99, 235, 0.18);
+  background: linear-gradient(135deg, var(--clr-bg-alt) 0%, rgba(37, 99, 235, 0.06) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.22);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
 .experience__item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.16);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.16);
   border-color: var(--clr-accent);
+  background: linear-gradient(135deg, var(--clr-bg-alt) 0%, rgba(37, 99, 235, 0.1) 100%);
 }
 
 .experience__header {
@@ -36,8 +37,11 @@
 }
 
 .experience__title {
-  color: var(--clr-primary);
-  font-size: 1.15rem;
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   margin: 0;
   font-weight: 700;
   flex: 1 1 230px;
@@ -50,10 +54,11 @@
   margin: 0;
   font-weight: 600;
   white-space: nowrap;
-  background: rgba(37, 99, 235, 0.12);
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  padding: 0.3rem 0.8rem;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(56, 189, 248, 0.08) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  padding: 0.4rem 0.95rem;
   border-radius: 999px;
+  transition: all 0.2s ease;
 }
 
 .experience__company {
@@ -85,13 +90,13 @@
 }
 
 .dark .experience__item {
-  background-color: rgba(15, 23, 42, 0.88);
-  border-color: rgba(56, 189, 248, 0.24);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(37, 99, 235, 0.08) 100%);
+  border-color: rgba(56, 189, 248, 0.3);
 }
 
 @media (max-width: 768px) {
   .experience__item {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 }
 
@@ -106,7 +111,7 @@
   }
 
   .experience__item {
-    padding: 1.2rem;
+    padding: 1rem;
     border-radius: 0.6rem;
   }
 
