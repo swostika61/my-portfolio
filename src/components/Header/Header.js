@@ -1,4 +1,4 @@
-import { header, about } from '../../portfolio'
+import { header } from '../../portfolio'
 import Navbar from '../Navbar/Navbar'
 import './Header.css'
 
@@ -7,7 +7,6 @@ import './Header.css'
  */
 const Header = () => {
   const { title } = header
-  const { name, role } = about
 
   return (
     <header id='header' className='header'>
@@ -20,13 +19,7 @@ const Header = () => {
         <Navbar />
       </nav>
 
-      <div className='header__content'>
-        <h1 className='header__title'>{name}</h1>
-        <p className='header__subtitle'>{role}</p>
-        <p className='header__description'>
-          Passionate Front End Engineer crafting beautiful, responsive web experiences
-        </p>
-      </div>
+
     </header>
   )
 }

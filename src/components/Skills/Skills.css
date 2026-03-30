@@ -17,7 +17,7 @@
   color: var(--clr-primary);
   font-size: clamp(0.85rem, 2vw, 1rem);
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition-ease);
   letter-spacing: 0.02em;
   backdrop-filter: blur(10px);
 }

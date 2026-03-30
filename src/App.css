@@ -19,6 +19,14 @@
   --clr-on-dark: #f8fafc;
   --clr-nav-footer-bg: #0f172a;
   --shadow: rgba(15, 23, 42, 0.14) 0px 10px 30px 0px;
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 16px 32px rgba(37, 99, 235, 0.16);
+  --shadow-header: 0 8px 20px rgba(2, 6, 23, 0.28);
+  --border-card: 1px solid rgba(37, 99, 235, 0.22);
+  --border-light: 1px solid rgba(37, 99, 235, 0.15);
+  --border-nav: 1px solid rgba(148, 163, 184, 0.22);
+  --transition-ease: .3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s ease;
 }
 
 .dark {
@@ -33,6 +41,14 @@
   --clr-nav-footer-bg: #0f172a;
   --shadow: rgba(0, 0, 0, 0.3) 0px 14px 34px 0px,
     rgba(0, 0, 0, 0.12) 0px 0px 0px 1px;
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 16px 32px rgba(37, 99, 235, 0.16);
+  --shadow-header: 0 8px 20px rgba(2, 6, 23, 0.28);
+  --border-card: 1px solid rgba(37, 99, 235, 0.22);
+  --border-light: 1px solid rgba(37, 99, 235, 0.15);
+  --border-nav: 1px solid rgba(148, 163, 184, 0.22);
+  --transition-ease: .3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s ease;
 }
 
 main {
@@ -73,22 +89,6 @@ main {
 
 .link:hover {
   color: var(--clr-accent);
-}
-
-.link::before {
-  content: '';
-  display: inline;
-  width: 0%;
-  height: 0.2em;
-  position: absolute;
-  bottom: 0;
-  background-color: var(--clr-accent);
-  transition: width 0.2s ease-in;
-}
-
-.link:hover::before,
-.link:focus::before {
-  width: 100%;
 }
 
 .link--nav {

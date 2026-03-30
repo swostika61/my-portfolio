@@ -15,14 +15,14 @@
   padding: 1.5rem 1.5rem;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--clr-bg-alt) 0%, rgba(37, 99, 235, 0.06) 100%);
-  border: 1px solid rgba(37, 99, 235, 0.22);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  border: var(--border-card);
+  transition: all var(--transition-ease);
+  box-shadow: var(--shadow-card);
 }
 
 .experience__item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.16);
+  box-shadow: var(--shadow-hover);
   border-color: var(--clr-accent);
   background: linear-gradient(135deg, var(--clr-bg-alt) 0%, rgba(37, 99, 235, 0.1) 100%);
 }
@@ -58,13 +58,13 @@
   border: 1px solid rgba(37, 99, 235, 0.3);
   padding: 0.4rem 0.95rem;
   border-radius: 999px;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .experience__company {
   margin-bottom: 0.9rem;
   padding-bottom: 0.7rem;
-  border-bottom: 1px solid rgba(37, 99, 235, 0.15);
+  border-bottom: var(--border-light);
 }
 
 .experience__company-name {
