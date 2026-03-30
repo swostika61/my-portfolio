@@ -1,7 +1,7 @@
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import Tooltip from '@material-ui/core/Tooltip'
-import { makeStyles } from '@material-ui/core/styles'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import Tooltip from '@mui/material/Tooltip'
+import { makeStyles } from '@mui/styles'
 import { about } from '../../portfolio'
 import './About.css'
 

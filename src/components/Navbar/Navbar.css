@@ -3,12 +3,32 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.nav {
+  gap: 0.25em;
+}
+
 .nav__list-item {
   margin-left: 1em;
 }
 
 .app .nav__hamburger {
   display: none;
+}
+
+.nav__theme,
+.nav__hamburger,
+.nav .link--nav {
+  color: var(--clr-on-dark);
+}
+
+.nav__theme:hover,
+.nav__theme:focus,
+.nav__hamburger:hover,
+.nav__hamburger:focus,
+.nav .link--nav:hover,
+.nav .link--nav:focus {
+  color: var(--clr-accent);
 }
 
 .nav__theme {
@@ -30,7 +50,7 @@
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: var(--clr-bg);
+    background-color: var(--clr-nav-footer-bg);
   }
 
   .nav__list-item {

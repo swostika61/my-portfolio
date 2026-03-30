@@ -1,84 +1,92 @@
-# Cleanfolio
+# Swostika Lamichhane Portfolio
 
-Cleanfolio is a portfolio template built with React. However, if you prefer a template built with HTML, CSS, and JavaScript, you can check out [Cleanfolio Minimal](https://github.com/rjshkhr/cleanfolio-minimal).
+Personal developer portfolio built with React, featuring projects, skills, education, experience, and contact information.
 
-## Preview
+## About
 
-[![Imgur](https://imgur.com/FwDMNEM.gif)](https://rjshkhr.github.io/cleanfolio)
+This portfolio presents:
 
-[Live Demo](https://rjshkhr.github.io/cleanfolio)
+- Professional profile and introduction
+- Selected projects with live preview links
+- Technical skills
+- Education timeline
+- Work experience timeline
+- Contact section
 
-## Instructions
+The site uses a Modern Tech Blue visual theme with clean typography and responsive layout.
 
-### Setup
+## Tech Stack
 
-```shell
-git clone https://github.com/rjshkhr/cleanfolio
-cd cleanfolio
+- React 18
+- Material UI
+- Tailwind CSS
+- PostCSS + Autoprefixer
+- gh-pages (deployment)
+
+## Project Structure
+
+- src/portfolio.js: Main content source (name, role, projects, skills, contact, experience)
+- src/components: Reusable UI sections
+- src/Education: Education section
+- public/documents: Resume and documents
+
+## Getting Started
+
+1. Clone the repository.
+2. Install dependencies.
+3. Start development server.
+
+```bash
+npm install
+npm start
 ```
 
-If you use [nvm](https://github.com/nvm-sh/nvm) or [fnm](https://github.com/Schniz/fnm), execute:
+The app will run at http://localhost:3000.
 
-```shell
-nvm install
-nvm use
+## Available Scripts
+
+```bash
+npm start
+npm run build
+npm test
+npm run lint
+npm run format
+npm run deploy
 ```
 
-Or:
+## Customize Portfolio Content
 
-```shell
-fnm install
-fnm use
+Edit src/portfolio.js to update:
+
+- Header title/logo text
+- About information
+- Project list
+- Skills
+- Experience
+- Contact email
+
+Optional updates:
+
+- Update page title in public/index.html
+- Replace resume file in public/documents
+
+## Deployment
+
+This project uses gh-pages for deployment.
+
+1. Set homepage in package.json to your deployment URL.
+2. Build and deploy:
+
+```bash
+npm run build
+npm run deploy
 ```
 
-To install and launch the project, run these commands:
+Example homepage values:
 
-```shell
-yarn
-yarn start
-```
-
-### How to Use
-
-- Open the `public/index.html` file and replace:
-
-`<title>John Smith</title>` with `<title>Your Name</title>`.
-
-- Open the `src/portfolio.js` file and make the necessary changes.
-
-- Optionally, you can add an image or logo for each project in two ways:
-  1. **Local image**
-     - Put your image inside the `public/images/` folder
-     - In `portfolio.js`, just use the file name:
-      ```js
-      image: "cleanfolio.png"
-      ```
-
-  2. **Web image**
-     - If your image is already hosted online, just paste the URL:
-     ```js
-     image: "https://example.com/my-logo.png"
-     ```
-
-
-
-### Deployment
-
-- In the `package.json` file, update:
-
-`"homepage": "https://rjshkhr.github.io/cleanfolio"`
-
-to `"homepage": "https://yourusername.github.io"`.
-
-- Push the changes to your repository.
-
-- To build and deploy, run the following commands:
-
-```shell
-yarn build
-yarn deploy
-```
+- https://yourusername.github.io/your-repo
+- https://yourdomain.com
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+MIT
