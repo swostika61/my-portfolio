@@ -11,15 +11,18 @@ const Experience = () => {
   return (
     <section className='section experience' id='experience'>
       <h2 className='section__title'>Experience</h2>
-      
+
       <div className='experience__container'>
         {experience.map((job) => (
-          <div key={job.title} className='experience__item'>
+          <article
+            key={`${job.title}-${job.company}`}
+            className='experience__item'
+          >
             <div className='experience__header'>
               <h3 className='experience__title'>{job.title}</h3>
               <p className='experience__period'>{job.period}</p>
             </div>
-            
+
             <div className='experience__company'>
               <p className='experience__company-name'>{job.company}</p>
               <p className='experience__location'>{job.location}</p>
@@ -30,7 +33,7 @@ const Experience = () => {
                 ? job.description.join(' ')
                 : job.description)}
             </p>
-          </div>
+          </article>
         ))}
       </div>
     </section>

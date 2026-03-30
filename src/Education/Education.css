@@ -1,131 +1,99 @@
 .education__timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* center the vertical line */
-  margin: 3rem 0;
-  padding: 2rem 0;
+  max-width: 840px;
+  margin: 2.2rem auto 0;
+  padding: 0 0.5rem;
+  display: grid;
+  gap: 1rem;
 }
 
-/* Vertical line in the middle */
-.education__timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--clr-primary), var(--clr-fg-alt));
-  border-radius: 2px;
-}
-
-/* Each education item wrapper */
 .education__item {
-  position: relative;
-  display: flex;
-  width: 100%;
-  justify-content: flex-start; /* default to left side */
-  margin-bottom: 3rem;
   opacity: 0;
-  transition: all 0.6s ease-out;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-/* Animate cards in */
 .education__item.animate {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Left / right alternation */
-.education__item.left {
-  justify-content: flex-start;
-  text-align: right;
-}
-
-.education__item.right {
-  justify-content: flex-end;
-  text-align: left;
-}
-
-/* Dot on the line */
-.education__dot {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0);
-  width: 18px;
-  height: 18px;
-  background-color: var(--clr-primary);
-  border-radius: 50%;
-  border: 3px solid var(--clr-bg);
-  box-shadow: 0 0 10px var(--clr-primary);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Card content */
 .education__content {
-  max-width: 45%;
+  width: 100%;
   background-color: var(--clr-bg-alt);
-  padding: 1.2rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-left: 4px solid var(--clr-primary);
+  padding: 1.15rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-/* Card hover effect */
 .education__content:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+  border-color: var(--clr-accent);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.15);
 }
 
-/* Text styling */
 .education__degree {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--clr-fg);
+  margin-bottom: 0.7rem;
+}
+
+.education__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+  align-items: center;
 }
 
 .education__school {
-  display: block;
-  font-size: 1rem;
+  font-size: 0.92rem;
+  color: var(--clr-fg);
+  font-weight: 600;
+}
+
+.education__location {
+  font-size: 0.88rem;
   color: var(--clr-fg-alt);
-  margin-top: 0.2rem;
+}
+
+.education__location::before {
+  content: '•';
+  margin-right: 0.35rem;
 }
 
 .education__year {
-  display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--clr-primary);
-  margin-top: 0.1rem;
+  font-weight: 600;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background-color: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.24);
+  margin-left: auto;
 }
 
 .education__desc {
-  margin-top: 0.6rem;
+  margin-top: 0;
   font-size: 0.95rem;
   color: var(--clr-fg-alt);
   line-height: 1.5;
 }
 
-/* Responsive mobile layout */
+.dark .education__content {
+  background-color: rgba(15, 23, 42, 0.88);
+  border-color: rgba(56, 189, 248, 0.28);
+}
+
 @media (max-width: 900px) {
-  .education__item,
-  .education__item.left,
-  .education__item.right {
-    justify-content: flex-start !important;
-    text-align: left !important;
-  }
-
   .education__content {
-    max-width: 90%;
-    margin-left: 40px; /* space from vertical line */
+    padding: 1rem 1rem;
   }
 
-  .education__timeline::before {
-    left: 20px;
-  }
-
-  .education__dot {
-    left: 20px;
+  .education__year {
+    margin-left: 0;
   }
 }

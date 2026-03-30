@@ -33,19 +33,21 @@ const Education = () => {
             <h2 className='section__title'>Education</h2>
 
             <div className='education__timeline'>
-                {education.map((item, index) => (
-                    <div
+                {education.map((item) => (
+                    <article
                         key={`${item.school}-${item.year}`}
-                        className={`education__item ${animate ? 'animate' : ''} ${index % 2 === 0 ? 'left' : 'right'}`}
+                        className={`education__item ${animate ? 'animate' : ''}`}
                     >
-                        <div className='education__dot' />
                         <div className='education__content'>
                             <h3 className='education__degree'>{item.degree}</h3>
-                            <span className='education__school'>{item.school}</span>
-                            <span className='education__year'>{item.year}</span>
+                            <div className='education__meta'>
+                                <span className='education__school'>{item.school}</span>
+                                <span className='education__location'>{item.location}</span>
+                                <span className='education__year'>{item.year}</span>
+                            </div>
                             <p className='education__desc'>{item.description}</p>
                         </div>
-                    </div>
+                    </article>
                 ))}
             </div>
         </section>
