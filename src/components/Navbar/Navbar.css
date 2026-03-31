@@ -38,8 +38,6 @@
 }
 
 
-.nav__hamburger:hover,
-.nav__hamburger:focus,
 .nav .link--nav:hover,
 .nav .link--nav:focus {
   color: inherit;
@@ -47,11 +45,16 @@
   transform: translateY(-1px);
 }
 
-.dark .nav__hamburger:hover,
-.dark .nav__hamburger:focus,
 .dark .nav .link--nav:hover,
 .dark .nav .link--nav:focus {
   background-color: rgba(56, 189, 248, 0.2);
+}
+
+.nav__theme:hover,
+.nav__theme:focus,
+.nav__hamburger:hover,
+.nav__hamburger:focus {
+  background-color: transparent;
 }
 
 .nav__theme {
