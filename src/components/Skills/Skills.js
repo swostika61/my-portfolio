@@ -19,6 +19,13 @@ const skillGroups = [
   },
 ]
 
+const skillGroupBySkill = skillGroups.reduce((acc, group) => {
+  group.match.forEach((skill) => {
+    acc[skill] = group.id
+  })
+  return acc
+}, {})
+
 /**
  * Skills component - Displays list of technical skills
  * Returns null if no skills data available
@@ -26,22 +33,25 @@ const skillGroups = [
 const Skills = () => {
   if (!skills.length) return null
 
+  const groupedSkillItems = skills.reduce((acc, skill) => {
+    const groupId = skillGroupBySkill[skill] || 'other'
+    if (!acc[groupId]) acc[groupId] = []
+    acc[groupId].push(skill)
+    return acc
+  }, {})
+
   const groupedSkills = skillGroups
     .map((group) => ({
       ...group,
-      items: skills.filter((skill) => group.match.includes(skill)),
+      items: groupedSkillItems[group.id] || [],
     }))
     .filter((group) => group.items.length > 0)
 
-  const remainingSkills = skills.filter(
-    (skill) => !skillGroups.some((group) => group.match.includes(skill))
-  )
-
-  if (remainingSkills.length > 0) {
+  if (groupedSkillItems.other?.length) {
     groupedSkills.push({
       id: 'other',
       title: 'Other',
-      items: remainingSkills,
+      items: groupedSkillItems.other,
     })
   }
 

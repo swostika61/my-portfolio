@@ -7,12 +7,21 @@ import { ThemeContext } from '../../contexts/theme'
 import { projects, skills, contact, experience } from '../../portfolio'
 import './Navbar.css'
 
+const navItems = [
+  { id: 'projects', label: 'Projects', show: () => projects.length > 0 },
+  { id: 'skills', label: 'Skills', show: () => skills.length > 0 },
+  { id: 'education', label: 'Education', show: () => true },
+  { id: 'experience', label: 'Experience', show: () => experience.length > 0 },
+  { id: 'contact', label: 'Contact', show: () => Boolean(contact.email) },
+]
+
 /**
  * Navbar component - Main navigation with theme toggle and mobile menu
  */
 const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext)
   const [showNavList, setShowNavList] = useState(false)
+  const visibleNavItems = navItems.filter((item) => item.show())
 
   const toggleNavList = useCallback(() => setShowNavList(prev => !prev), [])
 
@@ -24,69 +33,18 @@ const Navbar = () => {
 
   return (
     <nav className='center nav'>
-      <ul
-        style={{ display: showNavList ? 'flex' : null }}
-        className='nav__list'
-      >
-        {projects.length ? (
-          <li className='nav__list-item'>
+      <ul className={`nav__list ${showNavList ? 'nav__list--open' : ''}`}>
+        {visibleNavItems.map((item) => (
+          <li key={item.id} className='nav__list-item'>
             <a
-              href='#projects'
+              href={`#${item.id}`}
               onClick={toggleNavList}
               className='link link--nav'
             >
-              Projects
+              {item.label}
             </a>
           </li>
-        ) : null}
-
-        {skills.length ? (
-          <li className='nav__list-item'>
-            <a
-              href='#skills'
-              onClick={toggleNavList}
-              className='link link--nav'
-            >
-              Skills
-            </a>
-          </li>
-        ) : null}
-
-
-        <li className='nav__list-item'>
-          <a
-            href='#education'
-            onClick={toggleNavList}
-            className='link link--nav'
-          >
-            Education
-          </a>
-        </li>
-
-
-        {experience.length ? (
-          <li className='nav__list-item'>
-            <a
-              href='#experience'
-              onClick={toggleNavList}
-              className='link link--nav'
-            >
-              Experience
-            </a>
-          </li>
-        ) : null}
-
-        {contact.email ? (
-          <li className='nav__list-item'>
-            <a
-              href='#contact'
-              onClick={toggleNavList}
-              className='link link--nav'
-            >
-              Contact
-            </a>
-          </li>
-        ) : null}
+        ))}
       </ul>
 
       <button

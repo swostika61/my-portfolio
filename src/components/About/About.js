@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import { about } from '../../portfolio'
@@ -8,12 +9,14 @@ import './About.css'
  */
 const About = () => {
   const { name, role, description, resume, social } = about
-  const highlights = description
-    ? description
-      .split('.')
-      .map((item) => item.trim())
-      .filter(Boolean)
-    : []
+  const highlights = useMemo(() => (
+    description
+      ? description
+        .split('.')
+        .map((item) => item.trim())
+        .filter(Boolean)
+      : []
+  ), [description])
   const introLine = highlights[0] || ''
   const detailLines = highlights.slice(1)
 
