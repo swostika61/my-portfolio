@@ -5,7 +5,7 @@ import { about } from '../../portfolio'
 import './About.css'
 
 /**
- * About component - Displays user profile, bio, and social links
+ * About component - Displays user profile, bio, and social links.
  */
 const About = () => {
   const { name, role, description, resume, social } = about
