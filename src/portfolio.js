@@ -80,8 +80,8 @@ const experience = [
     company: 'Numeric Mind',
     location: 'Kathmandu, Nepal',
     period: 'Sep 2022 – Apr 2024',
-    overview:
-      'Delivered scalable React apps with reusable components, high test coverage, and performance tuning; boosted UI maintainability and user experience while optimizing release cadence.',
+    overview: 'Built role-based access control, audit trails, and permission systems for a clinical data platform serving 100+ users. Developed React and TypeScript components integrated with REST APIs for clinical workflows. Improved observability using Sentry, reducing issue resolution time by 30%. Built automated tests with Jest and Selenium, improving stability and reducing QA effort by 40%. Designed responsive UIs from Figma for better usability.',
+
   },
   {
     title: 'Front End Developer',
@@ -89,7 +89,7 @@ const experience = [
     location: 'Kathmandu, Nepal',
     period: 'May 2021 – Sep 2022',
     overview:
-      'Built high-performance React dashboards for 100k+ users, with responsive UI design, secure authentication, and optimized rendering for financial analytics.',
+      'Developed real-time financial dashboards using React and Tailwind CSS for 100,000+ users. Integrated REST APIs and managed state for live data updates. Implemented JWT authentication handling 250,000+ monthly sessions. Improved frontend performance by 25% using optimization techniques and built responsive UI components for web and mobile.'
   },
   {
     title: 'React Developer Intern',
@@ -97,7 +97,7 @@ const experience = [
     location: 'Kathmandu, Nepal',
     period: 'Jan 2021 – Apr 2021',
     overview:
-      'Created component-driven React UIs and integrated APIs with secure auth flows as an intern, focusing on modern frontend best practices.',
+      'Built authentication and order management interfaces using React and Material UI. Integrated REST APIs and implemented JWT-based authentication. Developed client-side routing using React Router for seamless navigation.'
   },
 ]
 
