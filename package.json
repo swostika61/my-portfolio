@@ -29,7 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
   },
   "browserslist": {
     "production": [
@@ -47,6 +48,7 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "wrangler": "^4.80.0"
   }
 }
