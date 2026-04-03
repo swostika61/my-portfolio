@@ -68,6 +68,14 @@ const experience = [
   // experience can be added or removed
   // if there are no experience items, Experience section won't show up
   {
+    title: 'IT & Application Design Assistant / Robotics Tutor',
+    company: 'International Canadian Education Robotics Program (ICE)',
+    location: 'Toronto, Ontario, Canada',
+    period: 'Sep 2025 – Dec 2025',
+    overview:
+      'Designed and maintained the ICE Robotics website, ensuring user-friendly navigation and updated content. Developed educational materials for robotics and coding programs, and delivered hands-on robotics and programming workshops for students. Provided technical support for Moodle LMS, assisted with troubleshooting robotics hardware/software, and collaborated with the team to improve the online learning experience and program engagement.',
+  },
+  {
     title: 'Software Engineer',
     company: 'Numeric Mind',
     location: 'Kathmandu, Nepal',
