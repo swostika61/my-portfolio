@@ -73,14 +73,14 @@ const experience = [
     location: 'Toronto, Ontario, Canada',
     period: 'Sep 2025 – Dec 2025',
     overview:
-      'Designed and maintained the ICE Robotics website, ensuring user-friendly navigation and updated content. Developed educational materials for robotics and coding programs, and delivered hands-on robotics and programming workshops for students. Provided technical support for Moodle LMS, assisted with troubleshooting robotics hardware/software, and collaborated with the team to improve the online learning experience and program engagement.',
+      'Developed and maintained responsive robotics program website, updating learning content and UI components. Created interactive robotics and coding learning materials for student workshops. Delivered hands-on robotics and programming workshops to students. Provided technical support for Moodle LMS and robotics systems.',
   },
   {
-    title: 'Software Engineer',
+    title: 'Frontend Engineer',
     company: 'Numeric Mind',
     location: 'Kathmandu, Nepal',
     period: 'Sep 2022 – Apr 2024',
-    overview: 'Built role-based access control, audit trails, and permission systems for a clinical data platform serving 100+ users. Developed React and TypeScript components integrated with REST APIs for clinical workflows. Improved observability using Sentry, reducing issue resolution time by 30%. Built automated tests with Jest and Selenium, improving stability and reducing QA effort by 40%. Designed responsive UIs from Figma for better usability.',
+    overview: 'Built frontend interfaces for role-based access control (Admin, Analyst, Data Entry), consuming secured REST APIs to enforce permissions. Developed audit log viewer, dataset listings, and upload/edit forms using reusable React and TypeScript components integrated with REST APIs. Integrated Sentry error tracking into React frontend applications, reducing average frontend issue resolution time by 30%. Implemented automated testing for login, audit trails, and eCRF validation using Jest and Selenium, improving release stability.',
 
   },
   {
@@ -89,7 +89,7 @@ const experience = [
     location: 'Kathmandu, Nepal',
     period: 'May 2021 – Sep 2022',
     overview:
-      'Developed real-time financial dashboards using React and Tailwind CSS for 100,000+ users. Integrated REST APIs and managed state for live data updates. Implemented JWT authentication handling 250,000+ monthly sessions. Improved frontend performance by 25% using optimization techniques and built responsive UI components for web and mobile.'
+      'Built real-time financial dashboards (Portfolio, Watchlist, Alerts, Orders) for 100K+ users using React, Highcharts, and Tailwind CSS. Integrated TradingView Charting Library for advanced candlestick charting. Connected REST APIs and WebSockets for live market prices, market depth, and technical signals. Implemented client-side JWT authentication flow, including route guards, Axios interceptors, and token refresh, supporting role-based and subscription-based UI access for 250K+ monthly sessions. Improved UI performance of data-intensive views (graphs, floorsheet) by up to 25% through code splitting and rendering optimizations.'
   },
   {
     title: 'React Developer Intern',
@@ -97,7 +97,7 @@ const experience = [
     location: 'Kathmandu, Nepal',
     period: 'Jan 2021 – Apr 2021',
     overview:
-      'Built authentication and order management interfaces using React and Material UI. Integrated REST APIs and implemented JWT-based authentication. Developed client-side routing using React Router for seamless navigation.'
+      'Built Login and Vendor Sign-Up pages with form validation in React. Translated Figma designs into responsive React components for the orders page of a Logistics Management System.'
   },
 ]
 

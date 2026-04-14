@@ -1,19 +1,17 @@
 # Swostika Lamichhane Portfolio
 
-Personal developer portfolio built with React, featuring projects, skills, education, experience, and contact information.
+Personal portfolio built with React. It highlights an introduction, featured projects, skills, work experience, education, and contact information.
 
-## About
+## Overview
 
-This portfolio presents:
+This site includes:
 
-- Professional profile and introduction
-- Selected projects with live preview links
-- Technical skills
-- Education timeline
+- A hero/about section with social links and resume access
+- Featured projects with live preview links
+- Skills grouped into frontend, styling, and testing/tooling
 - Work experience timeline
-- Contact section
-
-The site uses a Modern Tech Blue visual theme with clean typography and responsive layout.
+- Education section
+- Contact section with email link
 
 ## Tech Stack
 
@@ -21,27 +19,23 @@ The site uses a Modern Tech Blue visual theme with clean typography and responsi
 - Material UI
 - Tailwind CSS
 - PostCSS + Autoprefixer
-- gh-pages (deployment)
+- gh-pages for deployment
 
 ## Project Structure
 
-- src/portfolio.js: Main content source (name, role, projects, skills, contact, experience)
+- src/portfolio.js: Main content source for header, about, projects, skills, contact, and experience
 - src/components: Reusable UI sections
 - src/Education: Education section
-- public/documents: Resume and documents
+- public/documents: Resume and other documents
 
 ## Getting Started
-
-1. Clone the repository.
-2. Install dependencies.
-3. Start development server.
 
 ```bash
 npm install
 npm start
 ```
 
-The app will run at http://localhost:3000.
+The app runs at http://localhost:3000.
 
 ## Available Scripts
 
@@ -49,32 +43,32 @@ The app will run at http://localhost:3000.
 npm start
 npm run build
 npm test
-npm run lint
+npm run eject
 npm run format
 npm run deploy
 ```
 
-## Customize Portfolio Content
+## Customize Content
 
-Edit src/portfolio.js to update:
+Most content lives in src/portfolio.js. Update this file to change:
 
-- Header title/logo text
-- About information
+- Name, title, and intro text
+- Resume and social links
 - Project list
 - Skills
-- Experience
 - Contact email
+- Experience entries
 
-Optional updates:
+You can also update:
 
-- Update page title in public/index.html
-- Replace resume file in public/documents
+- public/index.html for the page title and metadata
+- public/documents for the resume PDF and related assets
 
 ## Deployment
 
 This project uses gh-pages for deployment.
 
-1. Set homepage in package.json to your deployment URL.
+1. Set the homepage field in package.json to your deployment URL.
 2. Build and deploy:
 
 ```bash
