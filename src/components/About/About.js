@@ -1,111 +1,65 @@
-import { useMemo } from 'react'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import { about } from '../../portfolio'
 import './About.css'
 
-/**
- * About component - Displays user profile, bio, and social links.
- */
-const About = () => {
-  const { name, role, description, resume, social } = about
-  const highlights = useMemo(() => (
-    description
-      ? description
-        .split('.')
-        .map((item) => item.trim())
-        .filter(Boolean)
-      : []
-  ), [description])
-  const introLine = highlights[0] || ''
-  const detailLines = highlights.slice(1)
+const FACTS = [
+  { label: 'Based in', value: 'Toronto, Canada' },
+  { label: 'Focus', value: 'React, TypeScript, Next.js' },
+  { label: 'Best at', value: 'Dashboards and live data interfaces' },
+  { label: 'Currently', value: 'Open to new frontend opportunities' },
+]
 
-  return (
-    <section className='about'>
-      <div className='about__panel'>
-        <div className='about__content'>
-          <p className='about__eyebrow'>About Me</p>
+const About = () => (
+  <section id='about' className='section about'>
+    <div className='section__head'>
+      <span className='section__number'>01</span>
+      <h2 className='section__title'>About</h2>
+      <span className='section__rule' />
+    </div>
 
-          {name && (
-            <h1 className='about__title'>
-              Hi, I am <span className='about__name'>{name}</span>
-            </h1>
-          )}
-
-          {role && <h2 className='about__role'>{role}</h2>}
-          {introLine && <p className='about__lead'>{introLine}.</p>}
-
-          {detailLines.length > 0 && (
-            <ul className='about__highlights'>
-              {detailLines.map((item) => (
-                <li key={item} className='about__desc'>
-                  {item}.
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <div className='about__contact'>
-            {resume && (
-              <a href={resume} download='resume-swostika-lamichhane.pdf'>
-                <span type='button' className='btn btn--outline'>
-                  Download Resume
-                </span>
-              </a>
-            )}
-
-            {social?.github && (
-              <a
-                href={social.github}
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='github'
-                className='link link--icon about__social-link'
-              >
-                <GitHubIcon />
-              </a>
-            )}
-
-            {social?.linkedin && (
-              <a
-                href={social.linkedin}
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='linkedin'
-                className='link link--icon about__social-link'
-              >
-                <LinkedInIcon />
-              </a>
-            )}
-          </div>
-        </div>
-
-        <aside className='about__visual'>
-          <div className='about__info-card'>
-            <p className='about__card-label'>Currently focused on</p>
-            <h3 className='about__card-title'>Building fast, accessible, and reliable user interfaces</h3>
-
-            <div className='about__card-grid'>
-              <div className='about__card-item'>
-                <span className='about__card-key'>Based in</span>
-                <span className='about__card-value'>Canada</span>
-              </div>
-
-              <div className='about__card-item'>
-                <span className='about__card-key'>Availability</span>
-                <span className='about__card-value'>Open to opportunities</span>
-              </div>
-
-              <div className='about__card-item'>
-                <span className='about__card-key'>Work Style</span>
-                <span className='about__card-value'>Clean architecture, reusable components, and team collaboration</span>
-              </div>
-            </div>
-          </div>
-        </aside>
+    <div className='about__grid'>
+      <div className='about__text'>
+        <p>
+          I am a front end engineer with 4+ years of experience. At Share Hub
+          in Nepal I built real time financial dashboards used by more than
+          100,000 people, where prices update every second and the page still
+          has to feel instant. At Numeric Mind I built healthcare software,
+          where careful, tested code matters because real clinics depend on
+          it.
+        </p>
+        <p>
+          In 2024 I moved to Canada and completed a postgraduate diploma in
+          Full Stack Software Development at Lambton College in Toronto.
+          Since then I have supported a robotics education program here, and
+          kept building: my recent projects include a job application tracker
+          with user accounts and full CRUD, and a live crypto dashboard in
+          Canadian dollars.
+        </p>
+        <p>
+          My strongest side is data heavy interfaces: live updates, charts,
+          tables and forms that stay fast and clear. I care about the details
+          a user feels, quick load times, honest loading and error states,
+          and screens that work for everyone.
+        </p>
       </div>
-    </section>
-  )
-}
+
+      <dl className='about__facts'>
+        {FACTS.map((fact) => (
+          <div key={fact.label} className='about__fact'>
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))}
+        <div className='about__fact'>
+          <dt>Portfolio code</dt>
+          <dd>
+            <a href={about.social.github} target='_blank' rel='noreferrer'>
+              github.com/swostika61
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+)
 
 export default About

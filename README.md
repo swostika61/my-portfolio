@@ -1,86 +1,44 @@
-# Swostika Lamichhane Portfolio
+# Swostika Lamichhane — Portfolio
 
-Personal portfolio built with React. It highlights an introduction, featured projects, skills, work experience, education, and contact information.
+My personal portfolio as a Front End Engineer in Toronto. React, TypeScript and Next.js, 4+ years of experience.
 
-## Overview
+## Design
 
-This site includes:
+Warm cream background, deep pine green, and a soft clay accent used sparingly. Headings in Fraunces (serif), body text in Inter. Calm and editorial, on purpose, most developer portfolios are dark blue.
 
-- A hero/about section with social links and resume access
-- Featured projects with live preview links
-- Skills grouped into frontend, styling, and testing/tooling
-- Work experience timeline
-- Education section
-- Contact section with email link
+## Sections
 
-## Tech Stack
+- Hero with name, role, stats and resume download
+- About, with a quick facts card
+- Projects: my own builds first (Job Hunt Tracker, Crypto Dashboard, with real screenshots), then products I worked on (Share Hub, Share Samrat)
+- Skills in three groups
+- Experience timeline
+- Education
+- Contact band with email and socials
 
-- React 18
-- Material UI
-- Tailwind CSS
-- PostCSS + Autoprefixer
+## Tech
+
+- React 18 (Create React App)
+- Plain CSS per component, no UI library in the components
+- Tailwind is available in the project but the design is hand written CSS with variables in `src/index.css`
 - gh-pages for deployment
 
-## Project Structure
+## Where the content lives
 
-- src/portfolio.js: Main content source for header, about, projects, skills, contact, and experience
-- src/components: Reusable UI sections
-- src/Education: Education section
-- public/documents: Resume and other documents
+Almost everything is in `src/portfolio.js`: name, role, description, stats, projects, skill groups, experience, education and contact email. Change the words there and the site updates. Project screenshots live in `public/images`, the resume in `public/documents`.
 
-## Getting Started
+## Run it
 
 ```bash
 npm install
 npm start
 ```
 
-The app runs at http://localhost:3000.
+## Deploy
 
-## Available Scripts
-
-```bash
-npm start
-npm run build
-npm test
-npm run eject
-npm run format
-npm run deploy
-```
-
-## Customize Content
-
-Most content lives in src/portfolio.js. Update this file to change:
-
-- Name, title, and intro text
-- Resume and social links
-- Project list
-- Skills
-- Contact email
-- Experience entries
-
-You can also update:
-
-- public/index.html for the page title and metadata
-- public/documents for the resume PDF and related assets
-
-## Deployment
-
-This project uses gh-pages for deployment.
-
-1. Set the homepage field in package.json to your deployment URL.
-2. Build and deploy:
+Same as before:
 
 ```bash
 npm run build
 npm run deploy
 ```
-
-Example homepage values:
-
-- https://yourusername.github.io/your-repo
-- https://yourdomain.com
-
-## License
-
-MIT

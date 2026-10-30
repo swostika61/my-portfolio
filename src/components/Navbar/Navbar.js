@@ -1,69 +1,65 @@
-import { useContext, useState, useEffect, useCallback } from 'react'
-import Brightness2Icon from '@mui/icons-material/Brightness2'
-import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded'
-import MenuIcon from '@mui/icons-material/Menu'
-import CloseIcon from '@mui/icons-material/Close'
-import { ThemeContext } from '../../contexts/theme'
-import { projects, skills, contact, experience } from '../../portfolio'
+import { useEffect, useState } from 'react'
+import { header, about } from '../../portfolio'
 import './Navbar.css'
 
-const navItems = [
-  { id: 'projects', label: 'Projects', show: () => projects.length > 0 },
-  { id: 'skills', label: 'Skills', show: () => skills.length > 0 },
-  { id: 'education', label: 'Education', show: () => true },
-  { id: 'experience', label: 'Experience', show: () => experience.length > 0 },
-  { id: 'contact', label: 'Contact', show: () => Boolean(contact.email) },
+const LINKS = [
+  { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Education', href: '#education' },
+  { label: 'Contact', href: '#contact' },
 ]
 
-/**
- * Navbar component - Main navigation with theme toggle and mobile menu
- */
 const Navbar = () => {
-  const [{ themeName, toggleTheme }] = useContext(ThemeContext)
-  const [showNavList, setShowNavList] = useState(false)
-  const visibleNavItems = navItems.filter((item) => item.show())
-
-  const toggleNavList = useCallback(() => setShowNavList(prev => !prev), [])
+  const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    document.body.classList.toggle('nav-open', showNavList)
-
-    return () => document.body.classList.remove('nav-open')
-  }, [showNavList])
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <nav className='center nav'>
-      <ul className={`nav__list ${showNavList ? 'nav__list--open' : ''}`}>
-        {visibleNavItems.map((item) => (
-          <li key={item.id} className='nav__list-item'>
+    <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+      <div className='nav__inner'>
+        <a href='#top' className='nav__logo'>
+          {header.title}
+        </a>
+
+        <button
+          type='button'
+          className='nav__toggle'
+          aria-label='Open menu'
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <ul className={`nav__links ${open ? 'nav__links--open' : ''}`}>
+          {LINKS.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} onClick={() => setOpen(false)}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+          <li>
             <a
-              href={`#${item.id}`}
-              onClick={toggleNavList}
-              className='link link--nav'
+              className='nav__resume'
+              href={about.resume}
+              target='_blank'
+              rel='noreferrer'
             >
-              {item.label}
+              Resume
             </a>
           </li>
-        ))}
-      </ul>
-
-      <button
-        type='button'
-        onClick={toggleTheme}
-        className='btn btn--icon nav__theme'
-        aria-label='toggle theme'
-      >
-        {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
-      </button>
-
-      <button
-        type='button'
-        onClick={toggleNavList}
-        className='btn btn--icon nav__hamburger'
-        aria-label='toggle navigation'
-      >
-        {showNavList ? <CloseIcon /> : <MenuIcon />}
-      </button>
+        </ul>
+      </div>
     </nav>
   )
 }

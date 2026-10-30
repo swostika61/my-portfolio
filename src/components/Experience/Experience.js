@@ -1,38 +1,27 @@
 import { experience } from '../../portfolio'
 import './Experience.css'
 
-/**
- * Experience component - Displays work experience and job history
- * Returns null if no experience data available
- */
 const Experience = () => {
   if (!experience.length) return null
 
   return (
-    <section className='section experience' id='experience'>
-      <h2 className='section__title'>Experience</h2>
+    <section id='experience' className='section experience'>
+      <div className='section__head'>
+        <span className='section__number'>04</span>
+        <h2 className='section__title'>Experience</h2>
+        <span className='section__rule' />
+      </div>
 
-      <div className='experience__container'>
-        {experience.map((job) => (
-          <article
-            key={`${job.title}-${job.company}`}
-            className='experience__item'
-          >
-            <div className='experience__header'>
-              <h3 className='experience__title'>{job.title}</h3>
-              <p className='experience__period'>{job.period}</p>
-            </div>
-
-            <div className='experience__company'>
-              <p className='experience__company-name'>{job.company}</p>
-              <p className='experience__location'>{job.location}</p>
-            </div>
-
-            <p className='experience__overview'>
-              {job.overview || (Array.isArray(job.description)
-                ? job.description.join(' ')
-                : job.description)}
+      <div className='exp__timeline'>
+        {experience.map((item) => (
+          <article key={`${item.company}-${item.period}`} className='exp__item'>
+            <span className='exp__dot' aria-hidden='true' />
+            <p className='exp__period'>{item.period}</p>
+            <h3 className='exp__title'>{item.title}</h3>
+            <p className='exp__company'>
+              {item.company} · {item.location}
             </p>
+            <p className='exp__overview'>{item.overview}</p>
           </article>
         ))}
       </div>

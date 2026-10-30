@@ -1,29 +1,28 @@
 import { useEffect, useState } from 'react'
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
+import { ArrowUpIcon } from '../icons'
 import './ScrollToTop.css'
 
-/**
- * ScrollToTop component - Shows an arrow button when user scrolls down
- * Helps users quickly navigate back to the top of the page
- */
 const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const toggleVisibility = () =>
-      window.pageYOffset > 500 ? setIsVisible(true) : setIsVisible(false)
-
-    window.addEventListener('scroll', toggleVisibility)
-    return () => window.removeEventListener('scroll', toggleVisibility)
+    const onScroll = () => setVisible(window.scrollY > 420)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  return isVisible ? (
-    <div className='scroll-top'>
-      <a href='#top' aria-label='top'>
-        <ArrowUpwardIcon fontSize='large' />
-      </a>
-    </div>
-  ) : null
+  if (!visible) return null
+
+  return (
+    <button
+      type='button'
+      className='to-top'
+      aria-label='Back to top'
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    >
+      <ArrowUpIcon size={18} />
+    </button>
+  )
 }
 
 export default ScrollToTop

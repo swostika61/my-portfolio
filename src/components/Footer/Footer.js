@@ -1,13 +1,11 @@
 import './Footer.css'
 
-/**
- * Footer component - Displays footer information with credits
- */
 const Footer = () => (
   <footer className='footer'>
-    <p className='footer__text'>
-      &copy; Swostika Lamichhane
-    </p>
+    <div className='footer__inner'>
+      <p>© 2026 Swostika Lamichhane</p>
+      <p className='footer__note'>Designed and built with React, in Toronto.</p>
+    </div>
   </footer>
 )
 
