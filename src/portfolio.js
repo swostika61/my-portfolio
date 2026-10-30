@@ -27,7 +27,7 @@ const projects = [
       'Share Hub is a platform that provides stock market information, analysis, and tools for NEPSE investors, helping users track shares, IPOs, and manage investments easily.',
     stack: ['SASS', 'TypeScript', 'Next js'],
     livePreview: 'https://sharehubnepal.com/',
-    image: 'https://sharehubnepal.com/_next/static/media/sharehub-logo.9c584522.png',
+    image: 'https://sharehubnepal.com/_next/static/media/sharehub-logo.fbdce8de.png',
   },
   {
     name: 'Share Samrat',
