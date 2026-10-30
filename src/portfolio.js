@@ -11,7 +11,7 @@ const about = {
   picture: 'https://cdn.dribbble.com/userupload/27544163/file/original-6ce706ca72f98a9e6853562df1f12b3d.png?format=webp&resize=400x300&vertical=center',
 
   description: 'Front End Engineer focused on building reliable web applications with React, TypeScript and Next js. Experienced in crafting responsive, accessible interfaces with strong performance. Collaborative with cross-functional teams to ship high-quality products and continuously improve engineering practices.',
-  resume: `${process.env.PUBLIC_URL}/documents/Swostika_CV.pdf`,
+  resume: `${process.env.PUBLIC_URL}/documents/resume-swostika-lamichhane.pdf`,
   social: {
     linkedin: 'https://www.linkedin.com/in/swostikalamichhane/',
     github: 'https://github.com/swostika61?tab=overview&from=2026-03-01&to=2026-03-19',
