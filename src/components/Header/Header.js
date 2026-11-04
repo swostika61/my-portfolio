@@ -28,10 +28,20 @@ const Header = () => {
         </div>
 
         <div className='hero__socials rise rise--3'>
-          <a href={social.github} target='_blank' rel='noreferrer' aria-label='GitHub'>
+          <a
+            href={social.github}
+            target='_blank'
+            rel='noreferrer'
+            aria-label='GitHub'
+          >
             <GitHubIcon />
           </a>
-          <a href={social.linkedin} target='_blank' rel='noreferrer' aria-label='LinkedIn'>
+          <a
+            href={social.linkedin}
+            target='_blank'
+            rel='noreferrer'
+            aria-label='LinkedIn'
+          >
             <LinkedInIcon />
           </a>
           <a href={`mailto:${contact.email}`} aria-label='Email'>

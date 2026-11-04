@@ -1,4 +1,5 @@
 import { skillGroups } from '../../portfolio'
+import SectionHeading from '../SectionHeading'
 import './Skills.css'
 
 const Skills = () => {
@@ -6,11 +7,7 @@ const Skills = () => {
 
   return (
     <section id='skills' className='section skills'>
-      <div className='section__head'>
-        <span className='section__number'>03</span>
-        <h2 className='section__title'>Skills</h2>
-        <span className='section__rule' />
-      </div>
+      <SectionHeading number='03' title='Skills' />
 
       <div className='skills__grid'>
         {skillGroups.map((group) => (

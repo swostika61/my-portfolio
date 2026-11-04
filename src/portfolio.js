@@ -29,14 +29,14 @@ const projects = [
     image: `${process.env.PUBLIC_URL}/images/job-tracker.png`,
     sourceCode: 'https://github.com/swostika61/job-tracker',
   },
-  // {
-  //   name: 'Crypto Dashboard',
-  //   description:
-  //     'Live crypto prices for the top 50 coins, in Canadian dollars by default. The browser calls my own Next.js API routes, which cache the CoinGecko data for a minute to respect the free API limit. Search, a CAD and USD switch, auto refresh every minute, and a coin page with a 7 day chart drawn as plain SVG.',
-  //   stack: ['Next.js', 'TypeScript', 'CoinGecko API'],
-  //   image: `${process.env.PUBLIC_URL}/images/crypto-dashboard.png`,
-  //   sourceCode: 'https://github.com/swostika61/crypto-dashboard',
-  // },
+  {
+    name: 'Crypto Dashboard',
+    description:
+      'Live crypto prices for the top 50 coins, in Canadian dollars by default. The browser calls my own Next.js API routes, which cache the CoinGecko data for a minute to respect the free API limit. Search, a CAD and USD switch, auto refresh every minute, and a coin page with a 7 day chart drawn as plain SVG.',
+    stack: ['Next.js', 'TypeScript', 'CoinGecko API'],
+    image: `${process.env.PUBLIC_URL}/images/crypto-dashboard.png`,
+    sourceCode: 'https://github.com/swostika61/crypto-dashboard',
+  },
   {
     name: 'Share Hub',
     description:

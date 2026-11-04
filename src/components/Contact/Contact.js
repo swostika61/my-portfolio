@@ -19,10 +19,20 @@ const Contact = () => {
           {contact.email}
         </a>
         <div className='contact__socials'>
-          <a href={about.social.github} target='_blank' rel='noreferrer' aria-label='GitHub'>
+          <a
+            href={about.social.github}
+            target='_blank'
+            rel='noreferrer'
+            aria-label='GitHub'
+          >
             <GitHubIcon />
           </a>
-          <a href={about.social.linkedin} target='_blank' rel='noreferrer' aria-label='LinkedIn'>
+          <a
+            href={about.social.linkedin}
+            target='_blank'
+            rel='noreferrer'
+            aria-label='LinkedIn'
+          >
             <LinkedInIcon />
           </a>
         </div>

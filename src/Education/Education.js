@@ -1,4 +1,5 @@
 import { education } from '../portfolio'
+import SectionHeading from '../components/SectionHeading'
 import './Education.css'
 
 const Education = () => {
@@ -6,11 +7,7 @@ const Education = () => {
 
   return (
     <section id='education' className='section education'>
-      <div className='section__head'>
-        <span className='section__number'>05</span>
-        <h2 className='section__title'>Education</h2>
-        <span className='section__rule' />
-      </div>
+      <SectionHeading number='05' title='Education' />
 
       <div className='edu__grid'>
         {education.map((item) => (

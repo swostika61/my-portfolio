@@ -1,4 +1,5 @@
 import { about } from '../../portfolio'
+import SectionHeading from '../SectionHeading'
 import './About.css'
 
 const FACTS = [
@@ -10,11 +11,7 @@ const FACTS = [
 
 const About = () => (
   <section id='about' className='section about'>
-    <div className='section__head'>
-      <span className='section__number'>01</span>
-      <h2 className='section__title'>About</h2>
-      <span className='section__rule' />
-    </div>
+    <SectionHeading number='01' title='About' />
 
     <div className='about__grid'>
       <div className='about__text'>

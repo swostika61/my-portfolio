@@ -1,4 +1,5 @@
 import { experience } from '../../portfolio'
+import SectionHeading from '../SectionHeading'
 import './Experience.css'
 
 const Experience = () => {
@@ -6,11 +7,7 @@ const Experience = () => {
 
   return (
     <section id='experience' className='section experience'>
-      <div className='section__head'>
-        <span className='section__number'>04</span>
-        <h2 className='section__title'>Experience</h2>
-        <span className='section__rule' />
-      </div>
+      <SectionHeading number='04' title='Experience' />
 
       <div className='exp__timeline'>
         {experience.map((item) => (
